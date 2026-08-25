@@ -9,7 +9,7 @@
     <a href="https://ko-fi.com/olankens">FUNDING</a>
   </div></td></tr></tbody>
   <tbody><tr><td align="center" width="99999">&nbsp;<div>
-    ...
+    Ecommerce backend in NestJS using Clean Architecture and DDD, rich aggregates, value objects, CQRS, domain events, sagas and ports and adapters across its four products, customers, orders and payments.
   </div>&nbsp;</td></tr></tbody>
   <tbody><tr><td align="center" width="99999">
     <a href="https://nestjs.com"><img src=".assets/nestjs.svg" align="center" width="56"></a>
