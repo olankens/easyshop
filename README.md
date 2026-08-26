@@ -30,8 +30,23 @@
 
 ## LEARNING
 
-### LAUNCH WITH VSCODIUM
+### LAUNCH WITH VSCODE
 
 ```sh
-codium .
+code .
+```
+
+### LAUNCH THE CONTAINERS
+
+```sh
+docker compose down
+docker compose up
+```
+
+### VANISH ALL CONTAINERS
+
+```sh
+docker rm -f $(docker ps -aq) 2>/dev/null
+docker system prune -a --volumes -f
+docker builder prune -a -f
 ```
