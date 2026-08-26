@@ -16,6 +16,8 @@
     <picture><img src=".assets/divider.gif" align="center" height="40" width="1"/></picture>
     <a href="https://postgresql.org"><img src=".assets/postgresql.svg" align="center" width="56"></a>
     <picture><img src=".assets/divider.gif" align="center" height="40" width="1"/></picture>
+    <a href="https://docker.com"><img src=".assets/docker.svg" align="center" width="56"></a>
+    <picture><img src=".assets/divider.gif" align="center" height="40" width="1"/></picture>
     <a href="https://stripe.com"><img src=".assets/stripe.svg" align="center" width="56"></a>
     <picture><img src=".assets/divider.gif" align="center" height="40" width="1"/></picture>
     <a href="https://typescriptlang.org"><img src=".assets/typescript.svg" align="center" width="56"></a>
