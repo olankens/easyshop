@@ -5,10 +5,8 @@ import {
 } from 'src/product/application/ports/product.repository.port';
 import { Product } from 'src/product/domain/entities/product.entity';
 import { ProductId } from 'src/product/domain/value-objects/product-id.vo';
-import {
-  DRIZZLE,
-  DrizzleDB,
-} from 'src/shared/infrastructure/database/postgres/drizzle.provider';
+import type { DrizzleDB } from 'src/shared/infrastructure/database/postgres/drizzle.provider';
+import { DRIZZLE } from 'src/shared/infrastructure/database/postgres/drizzle.provider';
 
 @Injectable()
 export class DrizzleProductRepostory implements ProductRepository {
