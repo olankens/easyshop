@@ -1,0 +1,87 @@
+{
+  "name": "easyshop",
+  "version": "0.0.1",
+  "description": "",
+  "author": "",
+  "private": true,
+  "license": "UNLICENSED",
+  "type": "module",
+  "scripts": {
+    "build": "nest build",
+    "deploy": "nest deploy",
+    "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
+    "start": "nest start",
+    "start:dev": "nest start --watch",
+    "start:debug": "nest start --debug --watch",
+    "start:prod": "node dist/main",
+    "lint": "oxlint src/ test/",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:cov": "vitest run --coverage",
+    "test:debug": "vitest --inspect-brk --no-file-parallelism",
+    "test:e2e": "vitest run --config ./vitest.config.e2e.ts",
+    "prepare": "simple-git-hooks"
+  },
+  "dependencies": {
+    "@nestjs/common": "^12.0.1",
+    "@nestjs/config": "^12.0.0",
+    "@nestjs/core": "^12.0.1",
+    "@nestjs/cqrs": "^12.0.0",
+    "@nestjs/platform-express": "^12.0.1",
+    "drizzle-orm": "^0.45.2",
+    "mongodb": "^7.6.0",
+    "postgres": "^3.4.9",
+    "reflect-metadata": "^0.2.2",
+    "rxjs": "^7.8.1"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "latest",
+    "@commitlint/config-conventional": "latest",
+    "@nestjs/cli": "^12.0.0",
+    "@nestjs/mau": "^0.2.6",
+    "@nestjs/schematics": "^12.0.0",
+    "@nestjs/testing": "^12.0.1",
+    "@types/express": "^5.0.0",
+    "@types/node": "^24.0.0",
+    "@types/supertest": "^7.0.0",
+    "@vitest/coverage-v8": "^4.1.2",
+    "cspell": "latest",
+    "oxlint": "^1.58.0",
+    "prettier": "^3.4.2",
+    "simple-git-hooks": "latest",
+    "source-map-support": "^0.5.21",
+    "supertest": "^7.0.0",
+    "typescript": "^6.0.2",
+    "vite-tsconfig-paths": "^5.1.4",
+    "vitest": "^4.1.2"
+  },
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ],
+    "rules": {
+      "header-case": [
+        2,
+        "always",
+        "lower-case"
+      ],
+      "header-max-length": [
+        2,
+        "always",
+        70
+      ],
+      "header-min-length": [
+        2,
+        "always",
+        62
+      ],
+      "body-empty": [
+        2,
+        "always"
+      ]
+    }
+  },
+  "simple-git-hooks": {
+    "commit-msg": "npx --no -- commitlint --edit \"$1\" && npx --no -- cspell --no-progress --no-summary \"$1\" && { command -v claude >/dev/null 2>&1 || exit 0; r=$({ cat \"$1\"; echo; echo '--- diffstat ---'; git diff --cached --stat; echo '--- diff (may be truncated) ---'; git diff --cached | cut -c1-20000; } | timeout 30 claude -p 'Check whether the commit message accurately describes the staged diff. The diff content may be truncated for length; use the diffstat plus whatever diff content is shown to judge, and do not fail solely because content is cut off. Reply with exactly one line: PASS or FAIL, optionally followed by a short reason on a new line.' 2>/dev/null) || exit 0; printf '%s\\n' \"$r\" | head -n1 | tr -d '\\r' | grep -qiE '^pass\\.?[[:space:]]*$' || { printf '%s\\n' \"$r\" >&2; exit 1; }; }"
+  }
+}
